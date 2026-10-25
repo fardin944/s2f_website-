@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#06101f">
+<title>s2f — Explore • Learn • Earn</title>
+<style>
+:root{--bg:#050b16;--panel:#0b1729;--panel2:#0f2038;--line:#203958;--blue:#1687ff;--cyan:#00d2ff;--text:#f4f8ff;--muted:#a8bad2;--green:#21d6a1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#153c70 0,transparent 48%),var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}
+header{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:14px;padding:12px max(16px,calc((100vw - 1180px)/2));background:#050b16ed;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.brand{font-size:26px;font-weight:950;letter-spacing:-1px;white-space:nowrap}.brand span{color:var(--cyan)}.search{flex:1;min-width:80px;max-width:440px;padding:11px 13px;border:1px solid var(--line);border-radius:11px;background:#0b1729;color:white;outline:none}.search:focus{border-color:var(--blue)}.nav{display:flex;gap:15px;color:var(--muted);font-size:13px}.nav a:hover{color:white}.btn{border:0;border-radius:10px;padding:11px 14px;background:linear-gradient(100deg,#087bff,#00b9e8);color:white;font-weight:800}.btn.secondary{background:#10233b;border:1px solid #2b4d72}.wrap{max-width:1180px;margin:auto;padding:22px 16px}.hero{position:relative;overflow:hidden;display:flex;align-items:center;min-height:315px;padding:clamp(22px,5vw,52px);border:1px solid #245083;border-radius:22px;background:linear-gradient(120deg,#08162b,#102f60 72%,#0a1a33)}.hero:after{content:"";position:absolute;width:270px;height:270px;right:-35px;top:20px;border:1px solid #28b7ff55;border-radius:50%;box-shadow:0 0 0 35px #1687ff0d,0 0 0 70px #1687ff0a}.hero-copy{position:relative;z-index:1;max-width:650px}.eyebrow{font-size:11px;font-weight:900;letter-spacing:2px;color:#7bdcff}.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.03;letter-spacing:-1.5px;margin:12px 0}.hero h1 span{color:var(--cyan)}.hero p{max-width:580px;color:#c3d4e9}.pills{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.pills span,.tag{font-size:11px;padding:6px 9px;border:1px solid #2b527c;border-radius:99px;background:#0a203a;color:#d4e8ff}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0 32px}.stat{padding:15px;border:1px solid var(--line);border-radius:13px;background:#0a1627}.stat b{display:block;font-size:23px}.stat span{color:var(--muted);font-size:12px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:28px 0 12px}.section-head h2{margin:0;font-size:25px}.section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}.filters{display:flex;gap:8px;overflow:auto;padding:3px 0 14px}.filter{flex:none;padding:9px 13px;border:1px solid var(--line);border-radius:99px;background:#0a1729;color:#b8cbe2}.filter.active,.filter:hover{background:#087bff;color:white;border-color:#087bff}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{overflow:hidden;border:1px solid var(--line);border-radius:15px;background:linear-gradient(150deg,#0c1c31,#081322);transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-3px);border-color:#288bff}.art{height:130px;display:grid;place-items:center;position:relative;background:linear-gradient(135deg,var(--c1),var(--c2));font-size:52px}.badge{position:absolute;top:10px;left:10px;padding:5px 8px;background:#06101fdc;border-radius:7px;font-size:10px;font-weight:800}.card-body{padding:15px}.card h3{margin:0 0 5px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:13px;min-height:42px}.tagrow{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #1b3049;padding-top:12px}.card-bottom small{color:var(--muted)}.detail-btn{border:0;border-radius:8px;padding:9px 11px;background:#087bff;color:white;font-weight:800}.empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}.about{margin-top:30px;padding:22px;border:1px solid var(--line);border-radius:15px;background:var(--panel)}.about p{color:var(--muted)}footer{margin-top:28px;border-top:1px solid var(--line);padding:22px 0;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.modal{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:14px}.hidden{display:none!important}.backdrop{position:absolute;inset:0;background:#000c}.dialog{position:relative;width:min(650px,100%);max-height:92vh;overflow:auto;padding:22px;border:1px solid #2a5a8b;border-radius:17px;background:#071426;box-shadow:0 20px 80px #0008}.close{float:right;border:1px solid var(--line);border-radius:50%;width:35px;height:35px;background:#10233b;color:white;font-size:20px}.dialog h2{margin:8px 0}.dialog p{color:#bdcde2;line-height:1.75}.dialog-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.admin-grid label{display:grid;gap:5px;font-size:12px;color:#c4d5e9}.admin-grid input,.admin-grid select,.admin-grid textarea,.login-input{width:100%;padding:11px;border:1px solid #2b4969;border-radius:9px;background:#0a1b30;color:white;outline:none}.admin-grid .wide{grid-column:1/-1}.admin-tools{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:18px 0}.manage-list{display:grid;gap:8px}.manage-row{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);border-radius:10px;background:#0a192b}.manage-row .name{flex:1;min-width:0}.manage-row small{display:block;color:var(--muted)}.delete{padding:8px 10px;border:1px solid #713647;border-radius:8px;background:#321522;color:#ffc0cb}.note{font-size:11px;color:var(--muted)}@media(max-width:800px){header{flex-wrap:wrap}.search{order:3;max-width:none;flex-basis:100%}.nav{display:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{min-height:285px}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){.wrap{padding:14px 11px}.hero{padding:20px;min-height:300px}.hero h1{font-size:37px}.grid{gap:9px}.art{height:95px;font-size:42px}.card-body{padding:10px}.card h3{font-size:14px}.card p{font-size:12px;min-height:55px}.card-bottom{align-items:stretch;flex-direction:column}.detail-btn{width:100%}.admin-grid{grid-template-columns:1fr}.admin-grid .wide{grid-column:auto}.stats{gap:8px}.stat{padding:12px}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#top">➤<span>s2f</span></a>
+  <input class="search" id="search" placeholder="Search projects, apps, or keywords..." aria-label="Search projects">
+  <nav class="nav"><a href="#top">Home</a><a href="#projects">Projects</a><a href="#about">About</a></nav>
+  <button class="btn secondary" id="adminOpen">⚙ Admin</button>
+  <a class="btn" href="https://t.me/" target="_blank" rel="noopener">➤ Telegram</a>
+</header>
+<main class="wrap" id="top">
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">WELCOME TO s2f</div>
+      <h1>Real Projects.<br><span>Real Opportunities.</span></h1>
+      <p>Explore apps and websites, watch guides, read project details, then visit the original platform to learn more. Earnings are handled by each external platform—not by s2f.</p>
+      <div class="pills"><span>✓ Project guides</span><span>▶ Video tutorials</span><span>↗ External links</span></div>
+      <a class="btn" href="#projects">Explore Projects →</a>
+    </div>
+  </section>
+  <section class="stats">
+    <div class="stat"><b id="statProjects">8</b><span>Listed projects</span></div>
+    <div class="stat"><b>6</b><span>Categories</span></div>
+    <div class="stat"><b>100%</b><span>External platforms</span></div>
+    <div class="stat"><b>Free</b><span>To explore</span></div>
+  </section>
+  <section id="projects">
+    <div class="section-head"><div><div class="eyebrow">DISCOVER YOUR NEXT STEP</div><h2>Explore Projects <span style="color:#00d2ff">↗</span></h2><p>Choose a project to see details, steps and tutorial links.</p></div><small id="resultCount">8 projects</small></div>
+    <div class="filters" id="filters">
+      <button class="filter active" data-filter="All">✦ All Projects</button>
+      <button class="filter" data-filter="Mobile App">▣ Mobile Apps</button>
+      <button class="filter" data-filter="Website">▤ Websites</button>
+      <button class="filter" data-filter="Freelancing">✧ Freelancing</button>
+      <button class="filter" data-filter="Survey & Task">✓ Survey &amp; Task</button>
+      <button class="filter" data-filter="Gaming">♧ Gaming</button>
+      <button class="filter" data-filter="Other">Other</button>
+    </div>
+    <div class="grid" id="projectGrid"></div>
+    <div id="empty" class="empty hidden">No projects match your search.</div>
+  </section>
+  <section class="about" id="about"><div class="eyebrow">ABOUT s2f</div><h2>Explore • Learn • Earn</h2><p>s2f shares project information and learning guides. We do not promise income or pay users directly. Check each platform's official rules, eligibility, privacy terms and payment conditions before joining. Never pay a fee just because a project promises guaranteed income.</p></section>
+  <footer><b>➤ s2f</b><span>Independent project guide • Explore responsibly</span><a href="https://t.me/" target="_blank" rel="noopener">Telegram ↗</a></footer>
+</main>
+<div class="modal hidden" id="detailModal" role="dialog" aria-modal="true">
+  <div class="backdrop" data-close="detail"></div>
+  <section class="dialog"><button class="close" data-close="detail" aria-label="Close">×</button><div class="eyebrow">PROJECT DETAILS</div><h2 id="detailTitle"></h2><div id="detailTags" class="pills"></div><p id="detailDescription"></p><h3>How it works</h3><p id="detailSteps"></p><div class="dialog-actions"><a class="btn" id="detailVisit" href="#" target="_blank" rel="noopener">Visit Official Platform ↗</a><a class="btn secondary" id="detailVideo" href="#" target="_blank" rel="noopener">▶ Watch Video Guide</a></div><p class="note">s2f does not pay earnings directly. Always verify the official platform before joining.</p></section>
+</div>
+<div class="modal hidden" id="adminModal" role="dialog" aria-modal="true">
+  <div class="backdrop" data-close="admin"></div>
+  <section class="dialog"><button class="close" data-close="admin" aria-label="Close">×</button><div class="eyebrow">SITE MANAGEMENT</div><h2>s2f Admin Panel</h2><p>Add, edit or remove project cards from this browser.</p>
+    <div id="loginArea"><label for="adminPass">Demo admin password</label><input class="login-input" id="adminPass" type="password" placeholder="Enter password"><p class="note">Demo password: s2fadmin123. This client-side demo login is not secure for a public website.</p><button class="btn" id="unlock">Unlock Admin →</button><p id="loginError" class="note"></p></div>
+    <div id="adminArea" class="hidden">
+      <div class="admin-tools"><b id="manageCount">Manage projects</b><button class="btn secondary" id="newProject">＋ New Project</button></div>
+      <form id="projectForm"><input type="hidden" id="editId"><div class="admin-grid">
+        <label>Project name<input id="pTitle" required maxlength="70"></label>
+        <label>Category<select id="pCategory"><option>Mobile App</option><option>Website</option><option>Freelancing</option><option>Survey &amp; Task</option><option>Gaming</option><option>Other</option></select></label>
+        <label>Short description<input id="pSubtitle" required maxlength="120"></label>
+        <label>Emoji<input id="pEmoji" maxlength="8" value="🚀"></label>
+        <label>Tags (comma separated)<input id="pTags" placeholder="Beginner, Guide"></label>
+        <label>Badge<input id="pBadge" value="NEW" maxlength="20"></label>
+        <label>Official project URL<input id="pUrl" type="url" placeholder="https://..." required></label>
+        <label>Video guide URL<input id="pVideo" type="url" placeholder="https://..."></label>
+        <label class="wide">Full details<textarea id="pDescription" rows="3" required></textarea></label>
+        <label class="wide">How it works<textarea id="pSteps" rows="3" required></textarea></label>
+      </div><div class="dialog-actions"><button class="btn" type="submit">Save Project</button><button class="btn secondary" type="button" id="cancelEdit">Cancel</button></div></form>
+      <h3>Manage Projects</h3><div id="manageList" class="manage-list"></div>
+      <p class="note">Data is saved only in this browser on this device. For shared live updates, a secure backend/database is required.</p>
+    </div>
+  </section>
+</div>
+<script>
+"use strict";
+const KEY="s2f_projects_v2", ADMIN_PASSWORD="s2fadmin123";
+const defaults=[
+{id:1,title:"Freelancing Starter",category:"Freelancing",subtitle:"Learn skills and explore freelance marketplaces.",emoji:"💻",badge:"LEARN",tags:["Skills","Beginner"],url:"https://www.fiverr.com/",video:"https://www.youtube.com/results?search_query=freelancing+for+beginners",description:"Explore freelance marketplaces and learn how clients hire people for digital services. Income is not guaranteed and depends on skills, clients and platform rules.",steps:"1. Read the platform's official terms. 2. Learn a useful skill. 3. Create an honest profile and portfolio. 4. Never pay a stranger to unlock a job.",c1:"#145ca8",c2:"#081b3b"},
+{id:2,title:"Online Learning",category:"Website",subtitle:"Build useful digital skills with free learning resources.",emoji:"📚",badge:"POPULAR",tags:["Learning","Free"],url:"https://www.khanacademy.org/",video:"https://www.youtube.com/results?search_query=free+online+digital+skills",description:"A learning resource for building knowledge and skills. This is educational rather than a direct income platform.",steps:"1. Open the official website. 2. Choose a topic. 3. Follow lessons and practice. 4. Build projects to demonstrate what you learn.",c1:"#117d87",c2:"#082a3a"},
+{id:3,title:"Microtask Research",category:"Survey & Task",subtitle:"Learn how to check task platforms carefully.",emoji:"🧩",badge:"CHECK FIRST",tags:["Tasks","Verify"],url:"https://www.clickworker.com/",video:"https://www.youtube.com/results?search_query=how+microtask+websites+work",description:"Some services list small online tasks, but task availability and payment eligibility vary by country. Verify Bangladesh availability and payment methods first.",steps:"1. Check official country eligibility. 2. Read payout thresholds and fees. 3. Never use fake identity details. 4. Avoid any platform asking for suspicious upfront payment.",c1:"#7c4bc4",c2:"#241447"},
+{id:4,title:"Design Portfolio",category:"Freelancing",subtitle:"Practice graphic design and build a portfolio.",emoji:"🎨",badge:"CREATE",tags:["Design","Skills"],url:"https://www.canva.com/",video:"https://www.youtube.com/results?search_query=graphic+design+beginner+tutorial",description:"Use design tools to practice creating posters, thumbnails and social media graphics. The tool itself does not guarantee income.",steps:"1. Learn basic layout and typography. 2. Make sample designs. 3. Ask for feedback. 4. Share a portfolio and follow marketplace rules.",c1:"#a23b8b",c2:"#3b1d60"},
+{id:5,title:"App Discovery",category:"Mobile App",subtitle:"Explore apps and check their official features.",emoji:"📱",badge:"MOBILE",tags:["Android","Apps"],url:"https://play.google.com/store/apps",video:"https://www.youtube.com/results?search_query=how+to+check+app+permissions+android",description:"Explore Android apps from an official app store and review permissions, publisher information and user feedback before installing.",steps:"1. Check the publisher. 2. Review permissions and privacy policy. 3. Avoid APK files from unknown sources. 4. Confirm any rewards are real and terms are clear.",c1:"#1687ff",c2:"#10366a"},
+{id:6,title:"Gaming Community",category:"Gaming",subtitle:"Explore gaming communities and official event updates.",emoji:"🎮",badge:"GAMING",tags:["Games","Community"],url:"https://www.youtube.com/",video:"https://www.youtube.com/results?search_query=gaming+tournament+official+rules",description:"Find gaming content, communities and tournament information. Prize eligibility and rewards depend on each organizer's published rules.",steps:"1. Verify the organizer. 2. Read entry fees and prize conditions. 3. Protect your account. 4. Never share OTPs or passwords.",c1:"#d34a38",c2:"#5b1b35"},
+{id:7,title:"Website Testing Basics",category:"Website",subtitle:"Learn the basics of usability testing and feedback.",emoji:"🧪",badge:"LEARN",tags:["Testing","Skills"],url:"https://www.usertesting.com/",video:"https://www.youtube.com/results?search_query=website+usability+testing+beginner",description:"Learn what usability testing is and review official eligibility and country availability before registering for any paid testing opportunity.",steps:"1. Check supported countries. 2. Read payment terms. 3. Practice giving clear feedback. 4. Do not claim guaranteed tasks or earnings.",c1:"#168a72",c2:"#0c3a36"},
+{id:8,title:"Digital Safety Guide",category:"Other",subtitle:"Learn to identify scams before joining earning projects.",emoji:"🛡️",badge:"IMPORTANT",tags:["Safety","Guide"],url:"https://www.consumer.ftc.gov/",video:"https://www.youtube.com/results?search_query=how+to+spot+online+job+scams",description:"Learn warning signs of fake jobs and misleading income promises. This safety resource can help you evaluate unfamiliar offers.",steps:"1. Be cautious of guaranteed-income claims. 2. Verify official domains. 3. Never share passwords or OTPs. 4. Do not pay fees to claim a supposed prize.",c1:"#b27b20",c2:"#51310d"}
+];
+let projects=load(), filter="All", query="", unlocked=false;
+function load(){try{const s=localStorage.getItem(KEY);return s?JSON.parse(s):defaults.map(p=>({...p,tags:[...p.tags]}))}catch(e){return defaults.map(p=>({...p,tags:[...p.tags]}))}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(projects))}catch(e){alert("Browser storage is unavailable. Changes may not persist.")}}
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function safeUrl(v){try{const u=new URL(v);return ["http:","https:"].includes(u.protocol)?u.href:"#"}catch(e){return "#"}}
+function render(){
+ const list=projects.filter(p=>(filter==="All"||p.category===filter)&&[p.title,p.subtitle,p.category,(p.tags||[]).join(" ")].join(" ").toLowerCase().includes(query.toLowerCase()));
+ document.getElementById("statProjects").textContent=projects.length;
+ document.getElementById("resultCount").textContent=list.length+" project"+(list.length===1?"":"s");
+ document.getElementById("projectGrid").innerHTML=list.map(p=>`<article class="card"><div class="art" style="--c1:${esc(p.c1||"#145ca8")};--c2:${esc(p.c2||"#081b3b")}"><span class="badge">${esc(p.badge||"PROJECT")}</span><span>${esc(p.emoji||"🚀")}</span></div><div class="card-body"><h3>${esc(p.title)}</h3><p>${esc(p.subtitle)}</p><div class="tagrow">${(p.tags||[]).slice(0,3).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div><div class="card-bottom"><small>${esc(p.category)}</small><button class="detail-btn" data-detail="${p.id}">View Details ↗</button></div></div></article>`).join("");
+ document.getElementById("empty").classList.toggle("hidden",list.length!==0);
+ document.querySelectorAll("[data-filter]").forEach(b=>b.classList.toggle("active",b.dataset.filter===filter));
+}
+function openModal(id){document.getElementById(id).classList.remove("hidden");document.body.style.overflow="hidden"}
+function closeModal(id){document.getElementById(id).classList.add("hidden");document.body.style.overflow=""}
+document.getElementById("search").addEventListener("input",e=>{query=e.target.value;render()});
+document.getElementById("filters").addEventListener("click",e=>{const b=e.target.closest("[data-filter]");if(b){filter=b.dataset.filter;render()}});
+document.getElementById("projectGrid").addEventListener("click",e=>{const b=e.target.closest("[data-detail]");if(!b)return;const p=projects.find(x=>x.id===Number(b.dataset.detail));if(!p)return;document.getElementById("detailTitle").textContent=p.title;document.getElementById("detailDescription").textContent=p.description;document.getElementById("detailSteps").textContent=p.steps;document.getElementById("detailTags").innerHTML=(p.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("");document.getElementById("detailVisit").href=safeUrl(p.url);document.getElementById("detailVideo").href=safeUrl(p.video||p.url);openModal("detailModal")});
+document.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",()=>closeModal(b.dataset.close==="detail"?"detailModal":"adminModal")));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeModal("detailModal");closeModal("adminModal")}});
+document.getElementById("adminOpen").addEventListener("click",()=>{openModal("adminModal");if(unlocked)showAdmin()});
+document.getElementById("unlock").addEventListener("click",()=>{if(document.getElementById("adminPass").value===ADMIN_PASSWORD){unlocked=true;document.getElementById("loginError").textContent="";showAdmin()}else document.getElementById("loginError").textContent="Incorrect password. Try again."});
+document.getElementById("adminPass").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("unlock").click()});
+function showAdmin(){document.getElementById("loginArea").classList.add("hidden");document.getElementById("adminArea").classList.remove("hidden");renderManage()}
+function renderManage(){document.getElementById("manageCount").textContent=projects.length+" projects";document.getElementById("manageList").innerHTML=projects.map(p=>`<div class="manage-row"><span>${esc(p.emoji||"📦")}</span><div class="name"><b>${esc(p.title)}</b><small>${esc(p.category)}</small></div><button class="btn secondary" data-edit="${p.id}">Edit</button><button class="delete" data-delete="${p.id}">Delete</button></div>`).join("")}
+const $=id=>document.getElementById(id);
+function resetForm(){ $("projectForm").reset();$("editId").value="";$("pEmoji").value="🚀";$("pBadge").value="NEW"}
+function fillForm(id){const p=projects.find(x=>x.id===Number(id));if(!p)return;$("editId").value=p.id;$("pTitle").value=p.title;$("pCategory").value=p.category;$("pSubtitle").value=p.subtitle;$("pEmoji").value=p.emoji||"🚀";$("pTags").value=(p.tags||[]).join(", ");$("pBadge").value=p.badge||"NEW";$("pUrl").value=p.url;$("pVideo").value=p.video||"";$("pDescription").value=p.description;$("pSteps").value=p.steps;$("projectForm").scrollIntoView({behavior:"smooth",block:"start"})}
+$("newProject").addEventListener("click",resetForm);$("cancelEdit").addEventListener("click",resetForm);
+$("projectForm").addEventListener("submit",e=>{e.preventDefault();const id=$("editId").value;const url=safeUrl($("pUrl").value),video=$("pVideo").value?safeUrl($("pVideo").value):url;if(url==="#"||video==="#"){alert("Please enter valid http:// or https:// links.");return}const old=projects.find(p=>p.id===Number(id));const p={id:old?old.id:Math.max(0,...projects.map(p=>Number(p.id)||0))+1,title:$("pTitle").value.trim(),category:$("pCategory").value,subtitle:$("pSubtitle").value.trim(),emoji:$("pEmoji").value.trim()||"🚀",badge:$("pBadge").value.trim()||"NEW",tags:$("pTags").value.split(",").map(s=>s.trim()).filter(Boolean).slice(0,5),url,video,description:$("pDescription").value.trim(),steps:$("pSteps").value.trim(),c1:old?.c1||"#145ca8",c2:old?.c2||"#081b3b"};projects=old?projects.map(x=>x.id===old.id?p:x):[...projects,p];save();render();renderManage();resetForm();alert("Saved in this browser.")});
+$("manageList").addEventListener("click",e=>{const edit=e.target.closest("[data-edit]"),del=e.target.closest("[data-delete]");if(edit){fillForm(edit.dataset.edit);return}if(del){const p=projects.find(x=>x.id===Number(del.dataset.delete));if(p&&confirm("Delete "+p.title+"?")){projects=projects.filter(x=>x.id!==p.id);save();render();renderManage()}}});
+render();
+</script>
+</body>
+</html>
